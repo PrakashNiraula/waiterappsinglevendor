@@ -5,7 +5,7 @@ import 'package:efood_table_booking/data/model/response/config_model.dart';
 import 'package:efood_table_booking/data/repository/splash_repo.dart';
 import 'package:get/get.dart';
 
-class SplashController extends GetxController implements GetxService{
+class SplashController extends GetxController implements GetxService {
   final SplashRepo splashRepo;
   SplashController({required this.splashRepo});
 
@@ -14,29 +14,26 @@ class SplashController extends GetxController implements GetxService{
   int? _selectedTableId;
   bool _isFixTable = false;
 
-
-
-
-
-
   int? get selectedBranchId => _selectedBranchId;
   int? get selectedTableId => _selectedTableId;
   bool get isFixTable => _isFixTable;
 
   void updateBranchId(int? value, {bool isUpdate = true}) {
     _selectedBranchId = value;
-    if(isUpdate) {
+    if (isUpdate) {
       update();
     }
   }
 
- TableModel? getTable(tableId, {int? branchId}) {
+  TableModel? getTable(tableId, {int? branchId}) {
     TableModel? _tableModel;
-    try{
-      _tableModel =  _configModel?.branch?.firstWhere((branch) =>
-      branch.id == (branchId != null ? branchId : getBranchId())).table?.firstWhere((table) =>
-      table.id == tableId);
-    }catch(e){
+    try {
+      _tableModel = _configModel?.branch
+          ?.firstWhere((branch) =>
+              branch.id == (branchId != null ? branchId : getBranchId()))
+          .table
+          ?.firstWhere((table) => table.id == tableId);
+    } catch (e) {
       print('table error : $e');
     }
     return _tableModel;
@@ -44,18 +41,16 @@ class SplashController extends GetxController implements GetxService{
 
   void updateTableId(int? number, {bool isUpdate = true}) {
     _selectedTableId = number;
-    if(isUpdate) {
+    if (isUpdate) {
       update();
     }
-
-
   }
 
   void updateFixTable(bool value, bool isUpdate) {
     _isFixTable = value;
-   if(isUpdate) {
-     update();
-   }
+    if (isUpdate) {
+      update();
+    }
   }
 
   DateTime get currentTime => _currentTime;
@@ -63,25 +58,23 @@ class SplashController extends GetxController implements GetxService{
   bool get firstTimeConnectionCheck => _firstTimeConnectionCheck;
 
   ConfigModel? _configModel;
-  ConfigModel? get configModel => _configModel;
 
+  ConfigModel? get configModel => _configModel;
 
   Future<bool> getConfigData() async {
     Response response = await splashRepo.getConfigData();
     bool _isSuccess = false;
-    if(response.statusCode == 200) {
+    if (response.statusCode == 200) {
       _configModel = ConfigModel.fromJson(response.body);
       _isSuccess = true;
-    }else {
+    } else {
       ApiChecker.checkApi(response);
-      if(response.statusText == ApiClient.noInternetMessage) {
-      }
+      if (response.statusText == ApiClient.noInternetMessage) {}
       _isSuccess = false;
     }
     update();
     return _isSuccess;
   }
-
 
   Future<bool> initSharedData() {
     return splashRepo.initSharedData();
@@ -96,8 +89,6 @@ class SplashController extends GetxController implements GetxService{
   }
 
   int getTableId() => splashRepo.getTable();
-
-
 
   int getBranchId() => splashRepo.getBranchId();
   bool getIsFixTable() => splashRepo.getFixTable();
@@ -116,9 +107,4 @@ class SplashController extends GetxController implements GetxService{
   void setFixTable(bool value) {
     splashRepo.setFixTable(value);
   }
-  
-
-
-
-
 }

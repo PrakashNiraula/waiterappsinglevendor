@@ -9,17 +9,17 @@ class ConfigModel {
   List<Branch>? branch;
   List<PromotionCampaign>? promotionCampaign;
 
-  ConfigModel(
-      {this.currencySymbol,
-        this.timeFormat,
-        this.decimalPointSettings,
-        this.maintenanceMode,
-        this.currencySymbolPosition,
-        this.baseUrls,
-        this.branch,
-        this.promotionCampaign,
-        this.restaurantLogo,
-      });
+  ConfigModel({
+    this.currencySymbol,
+    this.timeFormat,
+    this.decimalPointSettings,
+    this.maintenanceMode,
+    this.currencySymbolPosition,
+    this.baseUrls,
+    this.branch,
+    this.promotionCampaign,
+    this.restaurantLogo,
+  });
 
   ConfigModel.fromJson(Map<String, dynamic> json) {
     currencySymbol = json['currency_symbol'];
@@ -43,7 +43,6 @@ class ConfigModel {
       });
     }
     restaurantLogo = json['restaurant_logo'];
-
   }
 
   Map<String, dynamic> toJson() {
@@ -82,16 +81,16 @@ class BaseUrls {
 
   BaseUrls(
       {this.productImageUrl,
-        this.customerImageUrl,
-        this.bannerImageUrl,
-        this.categoryImageUrl,
-        this.categoryBannerImageUrl,
-        this.reviewImageUrl,
-        this.notificationImageUrl,
-        this.restaurantImageUrl,
-        this.deliveryManImageUrl,
-        this.chatImageUrl,
-        this.promotionalUrl});
+      this.customerImageUrl,
+      this.bannerImageUrl,
+      this.categoryImageUrl,
+      this.categoryBannerImageUrl,
+      this.reviewImageUrl,
+      this.notificationImageUrl,
+      this.restaurantImageUrl,
+      this.deliveryManImageUrl,
+      this.chatImageUrl,
+      this.promotionalUrl});
 
   BaseUrls.fromJson(Map<String, dynamic> json) {
     productImageUrl = json['product_image_url'];
@@ -142,19 +141,19 @@ class Branch {
 
   Branch(
       {this.id,
-        this.name,
-        this.email,
-        this.password,
-        this.latitude,
-        this.longitude,
-        this.address,
-        this.status,
-        this.branchPromotionStatus,
-        this.createdAt,
-        this.updatedAt,
-        this.coverage,
-        this.image,
-        this.table});
+      this.name,
+      this.email,
+      this.password,
+      this.latitude,
+      this.longitude,
+      this.address,
+      this.status,
+      this.branchPromotionStatus,
+      this.createdAt,
+      this.updatedAt,
+      this.coverage,
+      this.image,
+      this.table});
 
   Branch.fromJson(Map<String, dynamic> json) {
     print('branch id : ${json['id']}');
@@ -172,12 +171,12 @@ class Branch {
     coverage = json['coverage'];
     image = json['image'];
     if (json['table'] != null) {
-      table =  [];
+      table = [];
 
       json['table'].forEach((v) {
         table!.add(new TableModel.fromJson(v));
       });
-      if(table!.isEmpty) {
+      if (table!.isEmpty) {
         table?.add(TableModel(id: -1));
       }
     }
@@ -217,13 +216,13 @@ class TableModel {
 
   TableModel(
       {this.id,
-        this.number,
-        this.capacity,
-        this.branchId,
-        this.isActive,
-        this.isAvailable,
-        this.createdAt,
-        this.updatedAt});
+      this.number,
+      this.capacity,
+      this.branchId,
+      this.isActive,
+      this.isAvailable,
+      this.createdAt,
+      this.updatedAt});
 
   TableModel.fromJson(Map<String, dynamic> json) {
     id = json['id'];
@@ -269,20 +268,20 @@ class PromotionCampaign {
 
   PromotionCampaign(
       {this.id,
-        this.restaurantId,
-        this.name,
-        this.email,
-        this.password,
-        this.latitude,
-        this.longitude,
-        this.address,
-        this.status,
-        this.branchPromotionStatus,
-        this.createdAt,
-        this.updatedAt,
-        this.coverage,
-        this.image,
-        this.branchPromotion});
+      this.restaurantId,
+      this.name,
+      this.email,
+      this.password,
+      this.latitude,
+      this.longitude,
+      this.address,
+      this.status,
+      this.branchPromotionStatus,
+      this.createdAt,
+      this.updatedAt,
+      this.coverage,
+      this.image,
+      this.branchPromotion});
 
   PromotionCampaign.fromJson(Map<String, dynamic> json) {
     id = json['id'];
@@ -341,11 +340,11 @@ class BranchPromotion {
 
   BranchPromotion(
       {this.id,
-        this.branchId,
-        this.promotionType,
-        this.promotionName,
-        this.createdAt,
-        this.updatedAt});
+      this.branchId,
+      this.promotionType,
+      this.promotionName,
+      this.createdAt,
+      this.updatedAt});
 
   BranchPromotion.fromJson(Map<String, dynamic> json) {
     id = json['id'];
