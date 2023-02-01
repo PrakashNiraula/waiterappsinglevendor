@@ -140,7 +140,6 @@ class _SettingWidgetState extends State<SettingWidget> {
                   // ),
                   Container(
                     width: MediaQuery.of(context).size.width * 0.2,
-                    height: 65,
                     color: Colors.red,
                     child: Column(
                       children: [
@@ -163,7 +162,6 @@ class _SettingWidgetState extends State<SettingWidget> {
                   // ),
                   Container(
                     width: MediaQuery.of(context).size.width * 0.2,
-                    height: 65,
                     color: Colors.red,
                     child: Column(
                       children: [
@@ -183,7 +181,6 @@ class _SettingWidgetState extends State<SettingWidget> {
                   ),
                   Container(
                     width: MediaQuery.of(context).size.width * 0.2,
-                    height: 65,
                     color: Colors.grey,
                     child: Column(
                       children: [
@@ -227,7 +224,6 @@ class _SettingWidgetState extends State<SettingWidget> {
                   // ),
                   Container(
                     width: MediaQuery.of(context).size.width * 0.2,
-                    height: 65,
                     color: Colors.red,
                     child: Column(
                       children: [
@@ -250,7 +246,6 @@ class _SettingWidgetState extends State<SettingWidget> {
                   // ),
                   Container(
                     width: MediaQuery.of(context).size.width * 0.2,
-                    height: 65,
                     color: Colors.red,
                     child: Column(
                       children: [
@@ -270,7 +265,6 @@ class _SettingWidgetState extends State<SettingWidget> {
                   ),
                   Container(
                     width: MediaQuery.of(context).size.width * 0.2,
-                    height: 65,
                     color: Colors.grey,
                     child: Column(
                       children: [
@@ -313,7 +307,6 @@ class _SettingWidgetState extends State<SettingWidget> {
                   ),
                   Container(
                     width: MediaQuery.of(context).size.width * 0.2,
-                    height: 65,
                     color: Colors.red,
                     child: Column(
                       children: [
