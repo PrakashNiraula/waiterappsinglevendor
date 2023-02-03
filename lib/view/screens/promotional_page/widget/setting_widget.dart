@@ -129,18 +129,17 @@ class _SettingWidgetState extends State<SettingWidget> {
                         ),
                       ),
                       Text(
-                          '${splashController.configModel?.branch?.first.table?.first.number}'),
+                          '${splashController.configModel?.branch?.map((e) => e.table?[0].number)}'),
                       Text('Capacity'),
                       Text(
-                          '${splashController.configModel?.branch?.first.table?.first.capacity}'),
+                          '${splashController.configModel?.branch?.map((e) => e.table?[0].capacity)}'),
                     ],
                   ),
                   // SizedBox(
                   //   width: Dimensions.paddingSizeDefault,
                   // ),
                   Container(
-                    width: 90,
-                    height: 65,
+                    width: MediaQuery.of(context).size.width * 0.2,
                     color: Colors.red,
                     child: Column(
                       children: [
@@ -151,10 +150,10 @@ class _SettingWidgetState extends State<SettingWidget> {
                           ),
                         ),
                         Text(
-                            '${splashController.configModel?.branch?.last.table?.last.number}'),
+                            '${splashController.configModel?.branch?.map((e) => e.table?[1].number)}'),
                         Text('Capacity'),
                         Text(
-                            '${splashController.configModel?.branch?.last.table?.last.capacity}'),
+                            '${splashController.configModel?.branch?.map((e) => e.table?[2].capacity)}'),
                       ],
                     ),
                   ),
@@ -162,8 +161,7 @@ class _SettingWidgetState extends State<SettingWidget> {
                   //   width: Dimensions.paddingSizeDefault,
                   // ),
                   Container(
-                    width: 90,
-                    height: 65,
+                    width: MediaQuery.of(context).size.width * 0.2,
                     color: Colors.red,
                     child: Column(
                       children: [
@@ -174,16 +172,15 @@ class _SettingWidgetState extends State<SettingWidget> {
                           ),
                         ),
                         Text(
-                            '${splashController.configModel?.branch?.map((branch) => branch.table?[1].number).toString()}'),
+                            '${splashController.configModel?.branch?.map((branch) => branch.table?[3].number)}'),
                         Text('Capacity'),
                         Text(
-                            '${splashController.configModel?.branch?.map((branch) => branch.table?[1].capacity)}')
+                            '${splashController.configModel?.branch?.map((branch) => branch.table?[3].capacity)}')
                       ],
                     ),
                   ),
                   Container(
-                    width: 90,
-                    height: 65,
+                    width: MediaQuery.of(context).size.width * 0.2,
                     color: Colors.grey,
                     child: Column(
                       children: [
@@ -194,100 +191,13 @@ class _SettingWidgetState extends State<SettingWidget> {
                           ),
                         ),
                         Text(
-                            '${splashController.configModel?.branch?.map((branch) => branch.table?[2].number).toString()}'),
-                        Text('Capacity'),
-                        Text(
-                            '${splashController.configModel?.branch?.map((branch) => branch.table?[2].capacity)}')
-                      ],
-                    ),
-                  ),
-                ],
-              ),
-              SizedBox(height: Dimensions.paddingSizeDefault),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Column(
-                    children: [
-                      Text(
-                        'Table',
-                        style: robotoRegular.copyWith(
-                          fontSize: Dimensions.fontSizeDefault,
-                        ),
-                      ),
-                      Text(
-                          '${splashController.configModel?.branch?.map((branch) => branch.table?[3].number).toString()}'),
-                      Text('Capacity'),
-                      Text(
-                          '${splashController.configModel?.branch?.map((branch) => branch.table?[3].capacity)}')
-                    ],
-                  ),
-                  // SizedBox(
-                  //   width: Dimensions.paddingSizeDefault,
-                  // ),
-                  Container(
-                    width: 90,
-                    height: 65,
-                    color: Colors.red,
-                    child: Column(
-                      children: [
-                        Text(
-                          'Table',
-                          style: robotoRegular.copyWith(
-                            fontSize: Dimensions.fontSizeDefault,
-                          ),
-                        ),
-                        Text(
-                            '${splashController.configModel?.branch?.map((branch) => branch.table?[4].number).toString()}'),
+                            '${splashController.configModel?.branch?.map((branch) => branch.table?[4].number)}'),
                         Text('Capacity'),
                         Text(
                             '${splashController.configModel?.branch?.map((branch) => branch.table?[4].capacity)}')
                       ],
                     ),
                   ),
-                  // SizedBox(
-                  //   width: Dimensions.paddingSizeDefault,
-                  // ),
-                  Container(
-                    width: 90,
-                    height: 65,
-                    color: Colors.red,
-                    child: Column(
-                      children: [
-                        Text(
-                          'Table',
-                          style: robotoRegular.copyWith(
-                            fontSize: Dimensions.fontSizeDefault,
-                          ),
-                        ),
-                        Text(
-                            '${splashController.configModel?.branch?.map((branch) => branch.table?[5].number).toString()}'),
-                        Text('Capacity'),
-                        Text(
-                            '${splashController.configModel?.branch?.map((branch) => branch.table?[5].capacity)}')
-                      ],
-                    ),
-                  ),
-                  Container(
-                    width: 90,
-                    height: 65,
-                    color: Colors.grey,
-                    child: Column(
-                      children: [
-                        Text(
-                          'Table',
-                          style: robotoRegular.copyWith(
-                            fontSize: Dimensions.fontSizeDefault,
-                          ),
-                        ),
-                        Text(
-                            '${splashController.configModel?.branch?.map((branch) => branch.table?[6].number).toString()}'),
-                        Text('Capacity'),
-                        Text(
-                            '${splashController.configModel?.branch?.map((branch) => branch.table?[6].capacity)}')
-                      ],
-                    ),
-                  ),
                 ],
               ),
               SizedBox(height: Dimensions.paddingSizeDefault),
@@ -303,18 +213,17 @@ class _SettingWidgetState extends State<SettingWidget> {
                         ),
                       ),
                       Text(
-                          '${splashController.configModel?.branch?.map((branch) => branch.table?[7].number).toString()}'),
+                          '${splashController.configModel?.branch?.map((branch) => branch.table?[5].number)}'),
                       Text('Capacity'),
                       Text(
-                          '${splashController.configModel?.branch?.map((branch) => branch.table?[7].capacity)}')
+                          '${splashController.configModel?.branch?.map((branch) => branch.table?[5].capacity)}')
                     ],
                   ),
                   // SizedBox(
                   //   width: Dimensions.paddingSizeDefault,
                   // ),
                   Container(
-                    width: 90,
-                    height: 65,
+                    width: MediaQuery.of(context).size.width * 0.2,
                     color: Colors.red,
                     child: Column(
                       children: [
@@ -325,10 +234,10 @@ class _SettingWidgetState extends State<SettingWidget> {
                           ),
                         ),
                         Text(
-                            '${splashController.configModel?.branch?.map((branch) => branch.table?[8].number).toString()}'),
+                            '${splashController.configModel?.branch?.map((branch) => branch.table?[6].number)}'),
                         Text('Capacity'),
                         Text(
-                            '${splashController.configModel?.branch?.map((branch) => branch.table?[8].capacity)}')
+                            '${splashController.configModel?.branch?.map((branch) => branch.table?[6].capacity)}')
                       ],
                     ),
                   ),
@@ -336,8 +245,7 @@ class _SettingWidgetState extends State<SettingWidget> {
                   //   width: Dimensions.paddingSizeDefault,
                   // ),
                   Container(
-                    width: 90,
-                    height: 65,
+                    width: MediaQuery.of(context).size.width * 0.2,
                     color: Colors.red,
                     child: Column(
                       children: [
@@ -348,16 +256,15 @@ class _SettingWidgetState extends State<SettingWidget> {
                           ),
                         ),
                         Text(
-                            '${splashController.configModel?.branch?.map((branch) => branch.table?[9].number).toString()}'),
+                            '${splashController.configModel?.branch?.map((branch) => branch.table?[7].number)}'),
                         Text('Capacity'),
                         Text(
-                            '${splashController.configModel?.branch?.map((branch) => branch.table?[9].capacity)}')
+                            '${splashController.configModel?.branch?.map((branch) => branch.table?[7].capacity)}')
                       ],
                     ),
                   ),
                   Container(
-                    width: 90,
-                    height: 65,
+                    width: MediaQuery.of(context).size.width * 0.2,
                     color: Colors.grey,
                     child: Column(
                       children: [
@@ -368,7 +275,49 @@ class _SettingWidgetState extends State<SettingWidget> {
                           ),
                         ),
                         Text(
-                            '${splashController.configModel?.branch?.map((branch) => branch.table?[10].number).toString()}'),
+                            '${splashController.configModel?.branch?.map((branch) => branch.table?[8].number)}'),
+                        Text('Capacity'),
+                        Text(
+                            '${splashController.configModel?.branch?.map((branch) => branch.table?[8].capacity)}')
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+              SizedBox(height: Dimensions.paddingSizeDefault),
+              Row(
+                children: [
+                  Column(
+                    children: [
+                      Text(
+                        'Table',
+                        style: robotoRegular.copyWith(
+                          fontSize: Dimensions.fontSizeDefault,
+                        ),
+                      ),
+                      Text(
+                          '${splashController.configModel?.branch?.map((branch) => branch.table?[9].number)}'),
+                      Text('Capacity'),
+                      Text(
+                          '${splashController.configModel?.branch?.map((branch) => branch.table?[9].capacity)}')
+                    ],
+                  ),
+                  SizedBox(
+                    width: Dimensions.paddingSizeDefault,
+                  ),
+                  Container(
+                    width: MediaQuery.of(context).size.width * 0.2,
+                    color: Colors.red,
+                    child: Column(
+                      children: [
+                        Text(
+                          'Table',
+                          style: robotoRegular.copyWith(
+                            fontSize: Dimensions.fontSizeDefault,
+                          ),
+                        ),
+                        Text(
+                            '${splashController.configModel?.branch?.map((branch) => branch.table?[10].number)}'),
                         Text('Capacity'),
                         Text(
                             '${splashController.configModel?.branch?.map((branch) => branch.table?[10].capacity)}')
